@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-deployment
+  name: nginx-deployment
   labels:
-    app: jenkins
+    app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: jenkins
+      app: nginx
   template:
     metadata:
       labels:
-        app: jenkins
+        app: nginx
     spec:
       containers:
-      - name: jenkins
-        image: jenkins/jenkins:jdk17
+      - name: nginx
+        image: nginx:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
