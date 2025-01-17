@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: tdiya0311/devops:tomcat
+        image: diya0311/devops:tomcat
         ports:
         - containerPort: 8080
