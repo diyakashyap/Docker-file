@@ -8,7 +8,7 @@ spec:
   replicas: 3
   selector:
     matchLabels: 
-      app: tomcat
+      app: nginx
   template:
     metadata:
       labels:
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: diya0311/devops:tomcat
+        image: nginx:1.14.2
         ports:
         - containerPort: 8080
