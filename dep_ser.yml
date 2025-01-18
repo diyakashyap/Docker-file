@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metedata:
+  name: nginx-deployment
+  label: 
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabel:
+      app: nginx
+  template:
+    metadata:
+      label:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.3
+        ports:
+        - containerPort: 80
+---
+apiVersion: V1
+kind: Service
+metedata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
